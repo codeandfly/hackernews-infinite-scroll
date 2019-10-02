@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { StoriesContainer } from './containers/StoriesContainer';
 
-export const App = () => {
-  const [storyIds, setStoryIds] = useState([]);
-
-  return (
-    <p>Hello</p>
-
-  )
-}
+export const App = () => (
+  <StoriesContainer />
+)
 
