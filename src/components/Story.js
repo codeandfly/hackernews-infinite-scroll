@@ -7,10 +7,13 @@ import {
   StoryMetaElement
 } from '../styles/StoryStyles';
 
+import { mapTime } from '../mappers/mapTime';
+
 export const Story = ({ storyId }) => {
   const [story, setStory] = useState({});
 
   useEffect(() => {
+    console.log('storyId', storyId);
     getStory(storyId).then(data => data && data.url && setStory(data));
   }, []);
 
@@ -21,11 +24,11 @@ export const Story = ({ storyId }) => {
       </StoryTitle>
       <StoryMeta>
         <span data-testid="story-time">
-          <StoryMetaElement color="#000">By:</StoryMetaElement> {story.by}
+          <StoryMetaElement color="#aaa">by</StoryMetaElement> {story.by} { ` ` }
         </span>
         <span data-testid="story-time">
-          <StoryMetaElement color="#000">Posted:</StoryMetaElement>
-          {story.time}
+          {/* <StoryMetaElement color="#aaa"></StoryMetaElement> { ` ` } */}
+          {mapTime(story.time)} ago
         </span>
       </StoryMeta>
     </StoryWrapper>
