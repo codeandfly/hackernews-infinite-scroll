@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StoryWrapper = styled.section`
   padding-top: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   /* border-top: 1px solid #eee; */
 
   &:first-of-type {

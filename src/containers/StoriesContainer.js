@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { getStoryIds } from '../services/hnApi';
 import { Story } from '../components/Story';

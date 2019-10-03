@@ -13,9 +13,9 @@ export const Story = ({ storyId }) => {
   const [story, setStory] = useState({});
 
   useEffect(() => {
-    console.log('storyId', storyId);
+    // console.log('storyId', storyId);
     getStory(storyId).then(data => data && data.url && setStory(data));
-  }, []);
+  }, [storyId]);
 
   return story && story.url ? (
     <StoryWrapper data-testid="story">

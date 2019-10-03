@@ -31,5 +31,5 @@ export const StoriesContainerWrapper = styled.main`
 `;
 
 export const MainHeading = styled.h2`
-  color: #333;
+  color: #f74c19;
 `;
