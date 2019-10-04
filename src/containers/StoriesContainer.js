@@ -4,12 +4,12 @@ import { getStoryIds } from '../services/hnApi';
 import { Story } from '../components/Story';
 
 import {
-  GlobalStyle,
   MainHeading,
   StoriesContainerWrapper
 } from '../styles/StoriesContainerStyles';
 
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
+import { GlobalStyle } from '../styles/GlobalStyles';
 
 export const StoriesContainer = () => {
   const [storyIds, setStoryIds] = useState([]);
