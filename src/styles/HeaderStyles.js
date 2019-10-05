@@ -40,7 +40,7 @@ export const ThemeIcon = css`
 
 export const MoonIcon = styled(MoonSVG)`
   ${ThemeIcon};
-  fill: #7236f7;
+  fill: #46434c;
 `;
 
 export const SunIcon = styled(SunSVG)`

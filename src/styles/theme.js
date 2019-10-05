@@ -2,7 +2,7 @@ export const themes = {
   light: {
     mode: 'light',
     bgColor: '#fffcf1',
-    color: '#333',
+    color: '#525151',
     navBgColor: '#FF6D01',
     storyMetaColor: '#aaa',
     storyCountColor: '#888',

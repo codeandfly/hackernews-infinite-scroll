@@ -19,9 +19,13 @@ export const StoryCount = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
-  width: 40px;
-  margin-bottom: 1px;
+  min-width: 40px;
+  margin-bottom: 2px;
   color: ${props => props.theme.storyCountColor};
+
+  @media(max-width: 600px) {
+    font-size: .9rem;
+  }
 `;
 
 export const StoryScore = styled.span`
@@ -32,10 +36,16 @@ export const StoryContent = styled.div``;
 
 export const StoryTitle = styled.h1`
   margin-bottom: 0px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.8;
   text-decoration: none;
+
+  @media(max-width: 600px) {
+    line-height: 1.4;
+    padding-bottom: 5px;
+    font-size: .9rem;
+  }
 
   a {
     text-decoration: none;
@@ -44,7 +54,12 @@ export const StoryTitle = styled.h1`
 
 export const StoryMeta = styled.div`
   color: ${props => props.theme.storyMetaColor};
-  font-size: 14px;
+  font-size: .875rem;
+  padding-top: 2px;
+
+  @media(max-width: 600px) {
+    font-size: .8rem;
+  }
 
   > span:not(:first-child):before {
     margin: 0 5px;
