@@ -1,6 +1,6 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   html {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -10,14 +10,20 @@ export const GlobalStyle = createGlobalStyle`
             box-sizing: inherit;
   }
   body {
+    @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap');
     margin: 0;
     padding: 0;
     line-height: 1;
-    color: #202020;
-    background-color: #fafafe;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: ${props => props.theme.bgColor};
+    color: ${props => props.theme.color};
+    font-family: 'Open Sans';
     font-size: 16px;
   }
+
+  a {
+    color: ${props => props.theme.color};
+  }
+
   ul {
     margin: 0;
     padding: 0;

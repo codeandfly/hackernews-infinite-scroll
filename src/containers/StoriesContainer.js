@@ -4,12 +4,10 @@ import { getStoryIds } from '../services/hnApi';
 import { Story } from '../components/Story';
 
 import {
-  MainHeading,
   StoriesContainerWrapper
 } from '../styles/StoriesContainerStyles';
 
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
-import { GlobalStyle } from '../styles/GlobalStyles';
 
 export const StoriesContainer = () => {
   const [storyIds, setStoryIds] = useState([]);
@@ -21,9 +19,7 @@ export const StoriesContainer = () => {
 
   return (
     <>
-      <GlobalStyle />
       <StoriesContainerWrapper data-test-id="stories-container">
-        <MainHeading>Hacker News Stories</MainHeading>
         {storyIds.slice(0, count).map(storyId => (
           <Story key={storyId} storyId={storyId} />
         ))}

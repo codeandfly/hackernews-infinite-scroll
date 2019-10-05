@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { ThemeConsumer } from 'styled-components';
+
 import { getStory } from '../services/hnApi';
 import {
   StoryWrapper,
@@ -18,19 +20,24 @@ export const Story = ({ storyId }) => {
   }, [storyId]);
 
   return story && story.url ? (
-    <StoryWrapper data-testid="story">
-      <StoryTitle>
-        <a href={story.url}>{story.title}</a>
-      </StoryTitle>
-      <StoryMeta>
-        <span data-testid="story-time">
-          <StoryMetaElement color="#aaa">by</StoryMetaElement> {story.by} { ` ` }
-        </span>
-        <span data-testid="story-time">
-          {/* <StoryMetaElement color="#aaa"></StoryMetaElement> { ` ` } */}
-          {mapTime(story.time)} ago
-        </span>
-      </StoryMeta>
-    </StoryWrapper>
+    <ThemeConsumer>
+      {theme => (
+        <StoryWrapper data-testid="story">
+          <StoryTitle>
+            <a href={story.url}>{story.title}</a>
+          </StoryTitle>
+          <StoryMeta>
+            <span data-testid="story-time">
+              <StoryMetaElement>by</StoryMetaElement> {story.by}{' '}
+              {` `}
+            </span>
+            <span data-testid="story-time">
+              {/* <StoryMetaElement color="#aaa"></StoryMetaElement> { ` ` } */}
+              {mapTime(story.time)} ago
+            </span>
+          </StoryMeta>
+        </StoryWrapper>
+      )}
+    </ThemeConsumer>
   ) : null;
 };
