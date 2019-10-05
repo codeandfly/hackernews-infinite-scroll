@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { ReactComponent as HackerNewsLogoSVG } from '../assets/hacker-news-logo.svg';
 import { ReactComponent as MoonSVG } from '../assets/moon.svg';
-import { ReactComponent as SunSVG } from '../assets/sun.svg';
+import { ReactComponent as SunSVG } from '../assets/sun-2.svg';
 
 export const Nav = styled.nav`
   width: 100%;
@@ -44,5 +44,8 @@ export const MoonIcon = styled(MoonSVG)`
 
 export const SunIcon = styled(SunSVG)`
   ${ThemeIcon};
+  width: 1.6rem;
+  height: 1.9rem;
   fill: #f2d600;
+  overflow:visible;
 `;
