@@ -21,6 +21,7 @@ export const NavContainer = styled.div`
 export const SiteLogo = styled(HackerNewsLogoSVG)`
   width: 2rem;
   height: 2rem;
+  margin-right: 5px;
 `;
 
 export const SiteHeader = styled.h1`

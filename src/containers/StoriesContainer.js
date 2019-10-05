@@ -20,8 +20,8 @@ export const StoriesContainer = () => {
   return (
     <>
       <StoriesContainerWrapper data-test-id="stories-container">
-        {storyIds.slice(0, count).map(storyId => (
-          <Story key={storyId} storyId={storyId} />
+        {storyIds.slice(0, count).map((storyId, index) => (
+          <Story key={storyId} storyId={storyId} index={index}/>
         ))}
       </StoriesContainerWrapper>
     </>

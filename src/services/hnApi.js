@@ -2,7 +2,7 @@ import axios from 'axios';
 import { selectFields } from '../selectors/selectFields';
 
 export const baseUrl = 'https://hacker-news.firebaseio.com/v0/';
-export const newStoriesUrl = `${baseUrl}newstories.json`;
+export const newStoriesUrl = `${baseUrl}topstories.json`;
 export const storyUrl = `${baseUrl}item/`;
 
 export const getStory = async storyId => {

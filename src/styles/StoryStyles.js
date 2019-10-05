@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StoryWrapper = styled.section`
   padding-top: 0px;
   margin-bottom: 10px;
+  display: flex;
 
   &:first-of-type {
     border-top: 0;
@@ -13,6 +14,21 @@ export const StoryWrapper = styled.section`
     padding-bottom: 0;
   }
 `;
+
+export const StoryCount = styled.div`
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 40px;
+  margin-bottom: 1px;
+  color: ${props => props.theme.storyCountColor};
+`;
+
+export const StoryScore = styled.span`
+  color: ${props => props.theme.storyMetaColor};
+`;
+
+export const StoryContent = styled.div``;
 
 export const StoryTitle = styled.h1`
   margin-bottom: 0px;
