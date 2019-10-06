@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { NavLink, Link } from 'react-router-dom';
 import { ReactComponent as HackerNewsLogoSVG } from '../assets/hacker-news-logo.svg';
 import { ReactComponent as MoonSVG } from '../assets/moon.svg';
 import { ReactComponent as SunSVG } from '../assets/sun-2.svg';
@@ -29,6 +30,28 @@ export const SiteHeader = styled.h1`
   font-size: 1.1rem;
   font-family: 'Open Sans';
   font-weight: 500;
+`;
+
+export const NavList = styled.ul`
+  list-style: none;
+  display: flex;
+  margin-left: 30px;
+`;
+
+export const NavListItem = styled.li`
+  /* display: inline-block; */
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  display: flex;
+  margin-left: 20px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 5px 0;
+
+  &:hover {
+    /* color: #fff !important; */
+  }
 `;
 
 export const ThemeIcon = css`

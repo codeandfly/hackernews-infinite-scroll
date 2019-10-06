@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './styles/GlobalStyles';
 
@@ -10,12 +11,15 @@ export const App = () => {
   const theme = useTheme();
 
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyles />
-        <Header />
-        <StoriesContainer />
-      </>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <Header />
+          <StoriesContainer />
+          <Switch>
+            <Route exact path='/' render={() => <StoriesContainer />} />
+          </Switch>
+      </ThemeProvider>
+    </Router>
   );
 };

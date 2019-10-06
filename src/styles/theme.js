@@ -6,6 +6,7 @@ export const themes = {
     navBgColor: '#FF6D01',
     storyMetaColor: '#aaa',
     storyCountColor: '#888',
+    navLinkActive: '#ffeb3b'
   },
   dark: {
     mode: 'dark',
@@ -14,5 +15,6 @@ export const themes = {
     navBgColor: '#151312',
     storyMetaColor: '#6c7d8a',
     storyCountColor: '#aaa',
+    navLinkActive: '#ff6d02'
   }
 };
