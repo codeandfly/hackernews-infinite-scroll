@@ -1,6 +1,5 @@
 import React from 'react';
-import styled, { css, ThemeConsumer } from 'styled-components';
-import { NavLink, Link } from 'react-router-dom';
+import { ThemeConsumer } from 'styled-components';
 
 import {
   Nav,
@@ -14,8 +13,6 @@ import {
   NavListItem
   // ActiveStyle
 } from '../styles/HeaderStyles';
-
-const activeStyle = {};
 
 export const Header = () => {
   return (
@@ -49,6 +46,54 @@ export const Header = () => {
                     }}
                   >
                     New
+                  </StyledNavLink>
+                </NavListItem>
+                <NavListItem>
+                  <StyledNavLink
+                    to="/best"
+                    exact
+                    activeStyle={{
+                      color: `${theme.navLinkActive}`,
+                      fontWeight: '600',
+                    }}
+                  >
+                    Best
+                  </StyledNavLink>
+                </NavListItem>
+                <NavListItem>
+                  <StyledNavLink
+                    to="/ask"
+                    exact
+                    activeStyle={{
+                      color: `${theme.navLinkActive}`,
+                      fontWeight: '600',
+                    }}
+                  >
+                    Ask
+                  </StyledNavLink>
+                </NavListItem>
+                <NavListItem>
+                  <StyledNavLink
+                    to="/show"
+                    exact
+                    activeStyle={{
+                      color: `${theme.navLinkActive}`,
+                      fontWeight: '600',
+                    }}
+                  >
+                    Show
+                  </StyledNavLink>
+                </NavListItem>
+                <NavListItem>
+                  <StyledNavLink
+                    to="/jobs"
+                    exact
+                    activeStyle={{
+                      color: `${theme.navLinkActive}`,
+                      fontWeight: '600',
+                    }}
+                  >
+                    Jobs
                   </StyledNavLink>
                 </NavListItem>
               </NavList>

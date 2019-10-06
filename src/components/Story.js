@@ -18,11 +18,10 @@ export const Story = ({ storyId, index }) => {
   const [story, setStory] = useState({});
 
   useEffect(() => {
-    // console.log('storyId', storyId);
-    getStory(storyId).then(data => data && data.url && setStory(data));
+    getStory(storyId).then(data => data && setStory(data));
   }, [storyId]);
 
-  return story && story.url ? (
+  return story ? (
     <ThemeConsumer>
       {theme => (
         <StoryWrapper data-testid="story">

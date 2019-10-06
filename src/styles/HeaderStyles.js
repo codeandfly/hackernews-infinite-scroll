@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ReactComponent as HackerNewsLogoSVG } from '../assets/hacker-news-logo.svg';
 import { ReactComponent as MoonSVG } from '../assets/moon.svg';
 import { ReactComponent as SunSVG } from '../assets/sun-2.svg';

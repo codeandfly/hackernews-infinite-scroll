@@ -9,14 +9,14 @@ import {
 
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
 
-export const StoriesContainer = () => {
+export const StoriesContainer = ({ type }) => {
   const [storyIds, setStoryIds] = useState([]);
   const { count } = useInfiniteScroll();
 
   useEffect(() => {
-    getStoryIds().then(data => setStoryIds(data));
-  }, []);
-
+    getStoryIds(type).then(data => setStoryIds(data));
+  }, [type]);
+  
   return (
     <>
       <StoriesContainerWrapper data-test-id="stories-container">
