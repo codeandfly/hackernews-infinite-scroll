@@ -13,7 +13,11 @@ export const getStory = async storyId => {
 };
 
 export const getStoryIds = async (type) => {
-  const result = await axios.get(`${baseUrl}${type}stories${json}`);
-
-  return result.data;
+  try {
+    const result = await axios.get(`${baseUrl}${type}stories${json}`);
+    console.log('api', result.data)
+    return result.data;
+  } catch(error) {
+    throw new Error(`There was an error fetching the ${type} posts.`)
+  }
 };
