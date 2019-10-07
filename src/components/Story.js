@@ -21,7 +21,7 @@ export const Story = ({ storyId, index }) => {
     getStory(storyId).then(data => data && setStory(data));
   }, [storyId]);
 
-  return story ? (
+  return story && story.title ? (
     <ThemeConsumer>
       {theme => (
         <StoryWrapper data-testid="story">
