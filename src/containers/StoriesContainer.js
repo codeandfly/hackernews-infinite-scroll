@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useReducer } from 'react';
 
 import { getStoryIds } from '../services/hnApi';
 import { Story } from '../components/Story';
@@ -8,7 +8,6 @@ import { StoriesContainerWrapper } from '../styles/StoriesContainerStyles';
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
 import logger from '../hooks/use-reducer-logger';
 import { Loading } from '../components/Loading';
-import { STORY_INCREMENT } from '../constants';
 
 const storiesReducer = (state, action) => {
   switch (action.type) {
@@ -46,9 +45,7 @@ const initialState = {
 };
 
 export const StoriesContainer = ({ type }) => {
-  // const ref = useRef(STORY_INCREMENT);
-  let { count } = useInfiniteScroll(type);
-  // const initialCount = STORY_INCREMENT;
+  const { count } = useInfiniteScroll(type);
 
   const [state, dispatch] = useReducer(
     process.env.NODE_ENV === 'development'
@@ -59,31 +56,23 @@ export const StoriesContainer = ({ type }) => {
 
   useEffect(() => {
     dispatch({ type: 'fetch' });
-    
+
     getStoryIds(type)
-    .then(posts => dispatch({ type: 'success', posts }))
-    .catch(error => dispatch({ type: 'error', error }));
-    
-    // count = initialCount;
+      .then(posts => dispatch({ type: 'success', posts }))
+      .catch(error => dispatch({ type: 'error', error }));
+
   }, [type]);
-  
-  // const [storyIds, setStoryIds] = useState([]);
-  
-  // state.loading ? (
-    //   <Loading />
-    // ) :
-    
-    return (
-      <>
+
+  return (
+    <>
       {state.loading ? (
         <Loading />
-        ) : (
-          <StoriesContainerWrapper data-test-id="stories-container">
-          {console.log('count', count)}
+      ) : (
+        <StoriesContainerWrapper data-test-id="stories-container">
           {state &&
             state.posts &&
             state.posts
-              .slice(0, 30)
+              .slice(0, count)
               .map((storyId, index) => (
                 <Story key={storyId} storyId={storyId} index={index} />
               ))}

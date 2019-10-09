@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { STORY_INCREMENT, MAX_STORIES } from '../constants';
 import { debounce } from '../utils/debounce';
 
-export const useInfiniteScroll = () => {
+export const useInfiniteScroll = ( type ) => {
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(STORY_INCREMENT);
 
@@ -47,6 +47,11 @@ export const useInfiniteScroll = () => {
     setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
+
+  // Reset count to initial value when changing API search query
+  useEffect(() => {
+    setCount(STORY_INCREMENT)
+  }, [type])
 
   // CLEAN UP
   useEffect(() => {
